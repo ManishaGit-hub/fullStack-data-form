@@ -9,8 +9,8 @@ const PersonalDetails = ({personal,setPersonalDetails}) => {
 
   return (
     <>
+            <h3 className="mb-4">Personal Details</h3>
             <fieldset className="border p-4 rounded shadow-sm bg-light">
-                <legend className="w-auto px-2">Personal Details</legend>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email Address: </label>
                     <input type="email" id= "email" className="form-control" name="email" value={personal.email} placeholder="Enter email" onChange={handleChange} required/>

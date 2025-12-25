@@ -14,25 +14,25 @@ const ExperienceItem = ({experience,onChange,onRemove}) => {
     
   return (
     <>
-        <fieldset>
+        <fieldset className="border p-4 rounded shadow-sm bg-light mt-3">
             <legend>Experience</legend>
-            <div>
-                <label htmlFor="companyName">Company Name</label>
-                <input type="text" id="companyName" name="company" value={experience.company} onChange={handleChange} required/>
+            <div className="mb-3">
+                <label className="form-label" htmlFor="companyName">Company Name</label>
+                <input type="text" className="form-control" id="companyName" name="company" value={experience.company} onChange={handleChange} required/>
             </div>
-             <div>
-                <label htmlFor="StartDate">Start Date</label>
-                <input type="date" id="StartDate" name="startDate" value={experience.startDate} onChange={handleChange} required/>
+             <div className="mb-3">
+                <label className="form-label">Start Date</label>
+                <input type="date" className="form-control" name="startDate" value={experience.startDate} onChange={handleChange} required/>
             </div>
-            <div>
-                <label htmlFor="endDate">End Date</label>
-                <input type="date" id="endDate" name="endDate" value={experience.endDate} onChange={handleChange} required/>
+            <div className="mb-3">
+                <label className="form-label">End Date</label>
+                <input type="date" className="form-control" name="endDate" value={experience.endDate} onChange={handleChange} required/>
             </div>
-            <div>
-                <label>Years of Experience</label>
-                <input type="text" name="Years" value={experience.years} readOnly/>
+            <div className="mb-3">
+                <label className="form-label">Years of Experience</label>
+                <input type="text" className="form-control" name="Years" value={experience.years} readOnly/>
             </div>
-            <button type="button" onClick={() => onRemove(experience.id)}>Remove</button>
+            <button type="button" className="btn btn-danger btn-sm" onClick={() => onRemove(experience.id)}>Remove</button>
         </fieldset>
     </>
   )

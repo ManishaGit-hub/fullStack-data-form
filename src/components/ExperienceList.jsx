@@ -26,11 +26,11 @@ const ExperienceList = ({experiences,setExperiences}) => {
 
   return (
     <>
-        <h3>Professional Experience</h3>
+        <h3 className="mt-4 mb-4">Professional Experience</h3>
         {experiences.map(exp=>(
             <ExperienceItem key={exp.id} experience={exp} onChange={updateExperience} onRemove={removeExperience}/>
         ))}
-        <button type="button" onClick={addExperience}>+ Add Experience</button>
+        <button type="button" className="btn btn-secondary btn-sm mt-3" onClick={addExperience}>+ Add Experience</button>
     </>
   )
 }

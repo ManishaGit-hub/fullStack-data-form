@@ -24,14 +24,22 @@ const App = () => {
 
     const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(personal)
+   const payload={
+    personalDetails:personal,
+    professionalExperience:experiences
+   };
+   console.log("Final Payload:",payload)
   }
 
   return (
     <div className="container mt-3">
+        <h1 className="text-center mb-4">Candidate Information Submission Form</h1>
         <form onSubmit={handleSubmit}>
             <PersonalDetails personal={personal} setPersonalDetails={setPersonal}/>
             <ExperienceList experiences={experiences} setExperiences={setExperiences}/>
+            <div>
+            <button type="submit" className="btn btn-primary mt-3">Submit</button>
+            </div>
         </form>
     </div>
   )
