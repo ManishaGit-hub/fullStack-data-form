@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import PersonalDetails from './components/PersonalDetails'
 import ExperienceList from './components/ExperienceList'
 import {v4 as uuid} from "uuid"
+import { submitForm } from './utils/submitForm'
 
 const App = () => {
 
@@ -22,13 +23,22 @@ const App = () => {
             }
         ])
 
-    const handleSubmit = (e) => {
-    e.preventDefault()
+    const handleSubmit = async(e) => {
+    e.preventDefault();
    const payload={
     personalDetails:personal,
     professionalExperience:experiences
    };
-   console.log("Final Payload:",payload)
+   try{
+   const result = await submitForm(payload)
+   console.log("backend response:",result)
+   alert("Form submitted successfully!");
+   }
+   catch(error){
+    console.error("Error subitting form:",error);
+    alert("submission failed");
+   }
+  
   }
 
   return (
