@@ -1,16 +1,16 @@
 import axios from "axios"
 
-const API_BASE_URL = "http://localhost:5050"
 
-export const submitForm = async(formData)=>{
+export const submitForm = async(payload)=>{
     const response = await axios.post(
-        `${API_BASE_URL}/submit`,
-        formData,
+        /*`http://localhost:3000/server/DataSubmissionForm/submit`*/
+        `https://datasavedincatalystdb-60062192979.development.catalystserverless.in/server/DataSubmissionForm/submit`,
+        payload,
         {
             headers:{
-                "content-Type":"application/json",
-            },
+                "Content-Type":"application/json",
+            }
         }
-    )
-    return response.data
+    );
+    return response.data;
 }
