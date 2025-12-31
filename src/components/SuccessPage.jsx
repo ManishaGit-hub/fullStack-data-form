@@ -21,6 +21,7 @@ const SuccessPage = () => {
             <p>
                 <strong>Reference ID:</strong>{state.referenceId}
             </p>
+            <p>Please save this ID for future communication.</p>
         </div>
         <div>
             <button className="btn btn-secondary mt-3" onClick={()=> navigate('/')}>Back</button>
